@@ -8,7 +8,7 @@ To use this action, create a [new workflow](https://docs.github.com/en/actions/q
 name: CI
 on: [push]
 jobs:
-  build:
+  lint:
     name: Lint 💅
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,7 @@ You can pass custom arguments to the lint command by providing an `arguments` in
 name: CI
 on: [push]
 jobs:
-  build:
+  lint:
     name: Lint 💅
     runs-on: ubuntu-latest
     steps:
