@@ -2,13 +2,13 @@ name: Lint
 description: "Runs Quilt’s lint command on your workspace"
 inputs:
   arguments:
-    description: "Additional arguments to pass to sewing-kit’s lint command"
+    description: "Additional arguments to pass to Quilt’s lint command"
     required: false
     default: ""
   command:
-    description: "The command to run to start sewing-kit’s lint"
+    description: "The command to run to start Quilt’s lint"
     required: false
-    default: "node_modules/.bin/sewing-kit lint"
+    default: "node_modules/.bin/quilt lint"
 runs:
   using: "composite"
   steps:
@@ -16,7 +16,7 @@ runs:
       id: eslint-cache
       name: Restore ESLint cache
       with:
-        path: .sewing-kit/temp/eslint/cache
+        path: .quilt/temp/eslint/cache
         key: ${{ runner.os }}-eslint-v1-${{ github.sha }}
         restore-keys: |
           ${{ runner.os }}-eslint-v1-
